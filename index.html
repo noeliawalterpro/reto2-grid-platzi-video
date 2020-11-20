@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +16,12 @@
         html {
             font-size: 16px;
         }
-
+        
+        ul li{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
         h1,
         h2,
         h3 {
@@ -25,31 +29,38 @@
             padding: 1em;
             line-height: 1.5em;
         }
-        .container{
-            display:grid;
-            grid-template-columns:[inicio] 400px [c2] 450px [c3] 300px [fin];
-            grid-template-rows:[inicio] 50vh [r2] 10vh[r3] 50vh [fin];
-        }
 
+        .container {
+            height: auto;
+            display: grid;
+            grid-template-columns: [inicio] 1.5fr [c2] 2fr[c3] 1.2fr [fin];
+            grid-template-rows: [inicio] 0.35fr [r2] 0.3fr [r3] 0.35fr [fin];
+        }
+   
         .playlist {
             background-color: #151b31;
             color: white;
             padding: 15px;
             grid-area: 1 / 1/ 4 /2;
+            font-size: 0.9rem;
         }
-
-        .playlist ol,
-        .playlist ul {
-            padding-left: 40px;
+        .playlist .playlist-list {
+            height: 400px;
+            overflow-y: auto;
+        }
+        .playlist .playlist-list ol{
+            padding-left: 3em;
+        }
+        .playlist ul{
+            padding-left: 2em;
         }
 
         .playlist li {
             padding-bottom: 15px;
-
         }
 
         .playlist .logo img {
-            height: 60px;
+            height: 40px;
             width: auto;
         }
 
@@ -61,10 +72,12 @@
         .profile-item {
             display: block;
         }
-        .comments{
+
+        .comments {
             grid-area: 3 / 2 / 4 / 3;
             padding: 30px;
         }
+
         .profile-item figure img,
         .comments-list figure img {
             border-radius: 50%;
@@ -80,81 +93,175 @@
             display: inline-block;
             vertical-align: middle;
         }
-        .suggestions-list{
-             grid-area: 3 / 3/ 4 / 4;
-            
+
+        .suggestions-list {
+            grid-area: 3 / 3/ 4 / 4;
+            padding: 30px;
         }
-        .suggestions-list figure img{
+
+        .suggestions-list figure img {
             width: 100%;
         }
-        .new-order{
+
+        .new-order {
             position: relative;
             grid-area: 2 / 2 / 3 / 4;
-
+            padding: 30px;
         }
-        .video{
-            grid-row-start: 1 ;
+
+        .video {
+            grid-row-start: 1;
             grid-row-end: 2;
-            grid-column-start: 2 ;
+            grid-column-start: 2;
             grid-column-end: 4;
             position: relative;
-             height: 100%;
-             width: 100%;
+            height: 70vh;
+            width: 100%;
             object-fit: cover;
+            color: white;
+            background: black;
         }
 
-        .new-order-count{
-              color: grey;
-              width: 100%;
-              text-align: left;
-          }
-          .new-order-button{
-              background-color: violet;
-              color: black;
-              padding: 10px;
-              border: none;
-              border-radius: 15px;
-          }
-          .new-order-main,.new-order-title,.new-order-count{
-              display: block;
-          }
-          .new-order-button, .new-order-category,.new-order-share, .new-order-save{
-              display: inline-block;
-              height: 100%;
-              vertical-align: middle;
+        .new-order-count {
+            color: grey;
+            width: 100%;
+            text-align: left;
+        }
 
-          }
-          .new-order-tag{
-             display: inline-block;
-              border-radius: 15px;
-              height: auto;
-              padding: 7px;
-              color: white;
-              width: 100px;
-              font-size: 1.2em;
-              vertical-align: middle;
-              line-height: 1em;
-              text-align: center;
-          }
-          .new-order-tag.item1{
+        .new-order-button {
+            background-color: violet;
+            color: black;
+            padding: 10px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        .new-order-main,
+        .new-order-title,
+        .new-order-count {
+            display: block;
+        }
+
+        .new-order-button,
+        .new-order-category,
+        .new-order-share,
+        .new-order-save {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+
+        }
+
+        .new-order-tag {
+            display: inline-block;
+            border-radius: 15px;
+            height: auto;
+            padding: 7px;
+            color: white;
+            width: 100px;
+            font-size: 1.2em;
+            vertical-align: middle;
+            line-height: 1em;
+            text-align: center;
+        }
+
+        .new-order-tag.item1 {
             background-color: #a05ef1;
-          }
-          .new-order-tag.item2{
+        }
+
+        .new-order-tag.item2 {
             background-color: #17e9c4;
-          }
-          .new-order-tag.item3{
+        }
+
+        .new-order-tag.item3 {
             background-color: #dd1724;
-          }
-          .new-order-tag.item4{
+        }
+
+        .new-order-tag.item4 {
             background-color: #ef3285;
-          }
-          .icon-floppy-disk,.icon-share2{
-              font-size: 30px;
-              text-align: center;
-          }
-          .new-order-share,.new-order-save{
-              margin: auto 15px;
-          }
+        }
+
+        .icon-floppy-disk,
+        .icon-share2 {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .new-order-share,
+        .new-order-save {
+            margin: auto 15px;
+        }
+
+        @media screen and (max-width:720px){
+            .container {
+   display: block; 
+  
+         }
+        .playlist {
+          
+            grid-area: 1 / inicio / 4 / r2;
+       
+        }
+        .comments .comments-list .profile-image{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .comments .comments-list .profile-image img {
+            width: 30%;
+            margin: 0;
+            padding: 0;
+            padding: 5px;
+        }
+        .comments .comments-list .profile-image .comment-details {
+            width: 70%;
+            padding: 5px;
+        }
+        .new-order{
+            margin: 15px;
+            display: block;
+        }
+        .new-order .new-order-button{
+            width: 100%;
+            margin: 15px auto;
+        }
+        .new-order .new-order-category {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .new-order .new-order-category .new-order-tag{
+            width: 50%;
+            margin: 5px auto;
+            text-align: center;
+        }
+        .new-order-buttons{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .new-order .new-order-count{
+            text-align: center;
+           
+        }
+        .new-order .new-order-buttons  a{
+            display:block;
+            width: 50%;
+            margin: 0;
+            text-align: center;
+        }
+        .comments {
+          
+           grid-area: r2 / c2 / r4 / fin;
+        }
+        .suggestions-list {
+            margin: 15px;
+            grid-area: r4 / c2 / fin / fin;
+
+        }
+        }
+
     </style>
 </head>
 
@@ -163,33 +270,35 @@
     <aside class="item playlist">
         <figure class="logo"><img src="image/logo-Window 400x80.png" alt=""></figure>
         <h3>Mi Playlist</h3>
+        <div class="playlist-list">
         <ol>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
             <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
+                totam nulla eum!
             </li>
 
         </ol>
+    </div>
         <h3>Playlist de Amigos</h3>
         <ul>
             <li class="profile-item">
@@ -222,36 +331,37 @@
             </li>
         </ul>
     </aside>
- 
-    <video src="video.mp4" class="video"></video>
+
+    <video class="video"> Video</video>
     <div class="item new-order">
         <div class="new-order-main">
             <h2 class="new-order-title">New Order - Bizarre Love Triangle</h2>
             <span class="new-order-count">124,886 vistas</span>
-          
+
         </div>
-      <style>
-     
-      </style>
+        <style>
+
+        </style>
         <div class="new-order-buttons">
-         <button class="new-order-button">Agregar a mi lista</button>
-        <a class="new-order-share">
-            <div class="icon-share2"></div>
-            <span>Compartir</span>              
-        </a>
-        <a class="new-order-save">
-            <div class="icon-floppy-disk"></div>
-            <span>Guardar</span>
-        </a>
-        <div class="new-order-category">
-            <span class="new-order-tag item1">tag1</span>
-            <span class="new-order-tag item2">tag2</span>
-            <span class="new-order-tag item3">tag3</span>
-            <span class="new-order-tag item4">tag4</span>
+            <button class="new-order-button">Agregar a mi lista</button>
+  
+            <a class="new-order-share">
+                <div class="icon-share2"></div>
+                <span>Compartir</span>
+            </a>
+            <a class="new-order-save">
+                <div class="icon-floppy-disk"></div>
+                <span>Guardar</span>
+            </a>
+            <div class="new-order-category">
+                <span class="new-order-tag item1">tag1</span>
+                <span class="new-order-tag item2">tag2</span>
+                <span class="new-order-tag item3">tag3</span>
+                <span class="new-order-tag item4">tag4</span>
+            </div>
+
         </div>
 
-      </div>
-        
     </div>
     <section class="item comments">
         <h3>Comentarios</h3>
@@ -260,7 +370,7 @@
             <li class="item comments-list">
                 <figure class="item profile-image">
                     <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
+                    <div class="item comment-details">
                         <p class="item name">Gordon Carrol</p>
                         <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
 
@@ -271,7 +381,7 @@
             <li class="item comments-list">
                 <figure class="item profile-image">
                     <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
+                    <div class="item comment-details">
                         <p class="item name">Gordon Carrol</p>
                         <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
 
@@ -282,7 +392,7 @@
             <li class="item comments-list">
                 <figure class="item profile-image">
                     <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
+                    <div class="item comment-details">
                         <p class="item name">Gordon Carrol</p>
                         <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
 
@@ -293,7 +403,7 @@
             <li class="item comments-list">
                 <figure class="item profile-image">
                     <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
+                    <div class="item comment-details">
                         <p class="item name">Gordon Carrol</p>
                         <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
 
@@ -308,335 +418,14 @@
         <figure class="item suggestion">
             <img src="image/image2.png" alt="">
             <p class="suggestion-title">Quick And easy Lunches For the cooking challenged</p>
-  
+
         </figure>
         <figure class="item suggestion">
             <img src="image/image2.png" alt="">
             <p class="suggestion-title">Quick And easy Lunches For the cooking challenged</p>
-  
+
         </figure>
- </section>
-</body>
-
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            font-size: 16px;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-size: 1rem;
-            padding: 1em;
-            line-height: 1.5em;
-        }
-        .container{
-            display:grid;
-            grid-template-columns:[inicio] 400px [c2] 450px [c3] 300px [fin];
-            grid-template-rows:[inicio] 50vh [r2] 10vh[r3] 50vh [fin];
-        }
-
-        .playlist {
-            background-color: #151b31;
-            color: white;
-            padding: 15px;
-            grid-area: 1 / 1/ 4 /2;
-        }
-
-        .playlist ol,
-        .playlist ul {
-            padding-left: 40px;
-        }
-
-        .playlist li {
-            padding-bottom: 15px;
-
-        }
-
-        .playlist .logo img {
-            height: 60px;
-            width: auto;
-        }
-
-        figure img {
-            width: 100%;
-
-        }
-
-        .profile-item {
-            display: block;
-        }
-        .comments{
-            grid-area: 3 / 2 / 4 / 3;
-            padding: 30px;
-        }
-        .profile-item figure img,
-        .comments-list figure img {
-            border-radius: 50%;
-            width: 50px;
-            margin: 2px;
-
-            vertical-align: middle;
-            display: inline-block;
-        }
-
-        .profile-item p,
-        .profile-image .commebt-details {
-            display: inline-block;
-            vertical-align: middle;
-        }
-        .suggestions-list{
-             grid-area: 3 / 3/ 4 / 4;
-            
-        }
-        .suggestions-list figure img{
-            width: 100%;
-        }
-        .new-order{
-            position: relative;
-            grid-area: 2 / 2 / 3 / 4;
-
-        }
-        .video{
-            grid-row-start: 1 ;
-            grid-row-end: 2;
-            grid-column-start: 2 ;
-            grid-column-end: 4;
-            position: relative;
-             height: 100%;
-             width: 100%;
-            object-fit: cover;
-        }
-
-        .new-order-count{
-              color: grey;
-              width: 100%;
-              text-align: left;
-          }
-          .new-order-button{
-              background-color: violet;
-              color: black;
-              padding: 10px;
-              border: none;
-              border-radius: 15px;
-          }
-          .new-order-main,.new-order-title,.new-order-count{
-              display: block;
-          }
-          .new-order-button, .new-order-category,.new-order-share, .new-order-save{
-              display: inline-block;
-              height: 100%;
-              vertical-align: middle;
-
-          }
-          .new-order-tag{
-             display: inline-block;
-              border-radius: 15px;
-              height: auto;
-              padding: 7px;
-              color: white;
-              width: 100px;
-              font-size: 1.2em;
-              vertical-align: middle;
-              line-height: 1em;
-              text-align: center;
-          }
-          .new-order-tag.item1{
-            background-color: #a05ef1;
-          }
-          .new-order-tag.item2{
-            background-color: #17e9c4;
-          }
-          .new-order-tag.item3{
-            background-color: #dd1724;
-          }
-          .new-order-tag.item4{
-            background-color: #ef3285;
-          }
-          .icon-floppy-disk,.icon-share2{
-              font-size: 30px;
-              text-align: center;
-          }
-          .new-order-share,.new-order-save{
-              margin: auto 15px;
-          }
-    </style>
-</head>
-
-<body class="container">
-
-    <aside class="item playlist">
-        <figure class="logo"><img src="image/logo-Window 400x80.png" alt=""></figure>
-        <h3>Mi Playlist</h3>
-        <ol>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!</div>
-            </li>
-
-        </ol>
-        <h3>Playlist de Amigos</h3>
-        <ul>
-            <li class="profile-item">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <p class="item name">Gordon Carrol</p>
-
-                </figure>
-            </li>
-            <li class="profile-item">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <p class="item name">Gordon Carrol</p>
-
-                </figure>
-            </li>
-            <li class="profile-item">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <p class="item name">Gordon Carrol</p>
-
-                </figure>
-            </li>
-            <li class="profile-item">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <p class="item name">Gordon Carrol</p>
-
-                </figure>
-            </li>
-        </ul>
-    </aside>
- 
-    <video src="video.mp4" class="video"></video>
-    <div class="item new-order">
-        <div class="new-order-main">
-            <h2 class="new-order-title">New Order - Bizarre Love Triangle</h2>
-            <span class="new-order-count">124,886 vistas</span>
-          
-        </div>
-      <style>
-     
-      </style>
-        <div class="new-order-buttons">
-         <button class="new-order-button">Agregar a mi lista</button>
-        <a class="new-order-share">
-            <div class="icon-share2"></div>
-            <span>Compartir</span>              
-        </a>
-        <a class="new-order-save">
-            <div class="icon-floppy-disk"></div>
-            <span>Guardar</span>
-        </a>
-        <div class="new-order-category">
-            <span class="new-order-tag item1">tag1</span>
-            <span class="new-order-tag item2">tag2</span>
-            <span class="new-order-tag item3">tag3</span>
-            <span class="new-order-tag item4">tag4</span>
-        </div>
-
-      </div>
-        
-    </div>
-    <section class="item comments">
-        <h3>Comentarios</h3>
-        <input type="text" name="" id="" placeholder="Añade un comentario">
-        <ul>
-            <li class="item comments-list">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
-                        <p class="item name">Gordon Carrol</p>
-                        <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
-
-                    </div>
-
-                </figure>
-            </li>
-            <li class="item comments-list">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
-                        <p class="item name">Gordon Carrol</p>
-                        <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
-
-                    </div>
-
-                </figure>
-            </li>
-            <li class="item comments-list">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
-                        <p class="item name">Gordon Carrol</p>
-                        <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
-
-                    </div>
-
-                </figure>
-            </li>
-            <li class="item comments-list">
-                <figure class="item profile-image">
-                    <img src="image/profile.png" alt="">
-                    <div class="item commebt-details">
-                        <p class="item name">Gordon Carrol</p>
-                        <p class="item comment">Barbecue Sause For A Perfect Barbeque</p>
-
-                    </div>
-
-                </figure>
-            </li>
-        </ul>
     </section>
-    <section class="item suggestions-list">
-        <h3>Sugerencias</h3>
-        <figure class="item suggestion">
-            <img src="image/image2.png" alt="">
-            <p class="suggestion-title">Quick And easy Lunches For the cooking challenged</p>
-  
-        </figure>
-        <figure class="item suggestion">
-            <img src="image/image2.png" alt="">
-            <p class="suggestion-title">Quick And easy Lunches For the cooking challenged</p>
-  
-        </figure>
- </section>
 </body>
 
->>>>>>> e117d8e261ef9aad34e7e3fe180f588431b91153
 </html>
