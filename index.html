@@ -5,264 +5,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <link rel="stylesheet" href="main.css"> -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html {
-            font-size: 16px;
-        }
-        
-        ul li{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        h1,
-        h2,
-        h3 {
-            font-size: 1rem;
-            padding: 1em;
-            line-height: 1.5em;
-        }
+html {
+    font-size: 16px;
+}
 
-        .container {
-            height: auto;
-            display: grid;
-            grid-template-columns: [inicio] 1.5fr [c2] 2fr[c3] 1.2fr [fin];
-            grid-template-rows: [inicio] 0.35fr [r2] 0.3fr [r3] 0.35fr [fin];
-        }
-   
-        .playlist {
-            background-color: #151b31;
-            color: white;
-            padding: 15px;
-            grid-area: 1 / 1/ 4 /2;
-            font-size: 0.9rem;
-        }
-        .playlist .playlist-list {
-            height: 400px;
-            overflow-y: auto;
-        }
-        .playlist .playlist-list ol{
-            padding-left: 3em;
-        }
-        .playlist ul{
-            padding-left: 2em;
-        }
+ul li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-        .playlist li {
-            padding-bottom: 15px;
-        }
+h1,
+h2,
+h3 {
+    font-size: 1rem;
+ 
+    line-height: 1.5em;
+margin-bottom: 1em;
+}
 
-        .playlist .logo img {
-            height: 40px;
-            width: auto;
-        }
+.container {
+    height: auto;
+    display: grid;
+    grid-template-columns: [inicio] 1.5fr [c2] 2fr[c3] 1.2fr [fin];
+    grid-template-rows: [inicio] 0.35fr [r2] 0.3fr [r3] 0.35fr [fin];
+}
 
-        figure img {
-            width: 100%;
+.playlist {
+    background-color: #151b31;
+    color: white;
+    padding: 15px;
+    grid-area: 1 / 1/ 4 /2;
+    font-size: 0.9rem;
+}
 
-        }
+.playlist .playlist-list {
+    height: 400px;
+    overflow-y: auto;
+}
 
-        .profile-item {
-            display: block;
-        }
+.playlist .playlist-list ol {
+    padding-left: 3em;
+}
 
-        .comments {
-            grid-area: 3 / 2 / 4 / 3;
-            padding: 30px;
-        }
+.playlist ul {
+    padding-left: 2em;
+}
 
-        .profile-item figure img,
-        .comments-list figure img {
-            border-radius: 50%;
-            width: 50px;
-            margin: 2px;
+.playlist li {
+    padding-bottom: 15px;
+}
 
-            vertical-align: middle;
-            display: inline-block;
-        }
+.playlist .logo img {
+    height: 40px;
+    width: auto;
+}
 
-        .profile-item p,
-        .profile-image .commebt-details {
-            display: inline-block;
-            vertical-align: middle;
-        }
+figure img {
+    width: 100%;
 
-        .suggestions-list {
-            grid-area: 3 / 3/ 4 / 4;
-            padding: 30px;
-        }
+}
 
-        .suggestions-list figure img {
-            width: 100%;
-        }
+.profile-item {
+    display: block;
+}
 
-        .new-order {
-            position: relative;
-            grid-area: 2 / 2 / 3 / 4;
-            padding: 30px;
-        }
+.comments {
+    grid-area: 3 / 2 / 4 / 3;
+    padding: 30px;
+}
 
-        .video {
-            grid-row-start: 1;
-            grid-row-end: 2;
-            grid-column-start: 2;
-            grid-column-end: 4;
-            position: relative;
-            height: 70vh;
-            width: 100%;
-            object-fit: cover;
-            color: white;
-            background: black;
-        }
+.comments input[type="text"] {
+        border: none;
+        background: transparent;
+        padding-left: 15px;
+        color:#bcbcbc;
+    }
 
-        .new-order-count {
-            color: grey;
-            width: 100%;
-            text-align: left;
-        }
+    .comments .input-comment {
+        width: 60px;
+        display: flex;
+        width: 100%;
+        background:#f2f2f2;
+        margin: 15px auto;
+        box-shadow: -2px 4px 7px 0px #92929275;
 
-        .new-order-button {
-            background-color: violet;
-            color: black;
-            padding: 10px;
-            border: none;
-            border-radius: 15px;
-        }
+    }
 
-        .new-order-main,
-        .new-order-title,
-        .new-order-count {
-            display: block;
-        }
+    .comments .input-comment img {
+        height: 30px;
+    }
 
-        .new-order-button,
-        .new-order-category,
-        .new-order-share,
-        .new-order-save {
-            display: inline-block;
-            height: 100%;
-            vertical-align: middle;
+.profile-item figure img,
+.comments-list figure img {
+    border-radius: 50%;
+    width: 50px;
+    margin: 2px;
 
-        }
+    vertical-align: middle;
+    display: inline-block;
+}
 
-        .new-order-tag {
-            display: inline-block;
-            border-radius: 15px;
-            height: auto;
-            padding: 7px;
-            color: white;
-            width: 100px;
-            font-size: 1.2em;
-            vertical-align: middle;
-            line-height: 1em;
-            text-align: center;
-        }
+.profile-item p,
+.profile-image .commebt-details {
+    display: inline-block;
+    vertical-align: middle;
+}
 
-        .new-order-tag.item1 {
-            background-color: #a05ef1;
-        }
+.suggestions-list {
+    grid-area: 3 / 3/ 4 / 4;
+    padding: 30px;
+}
 
-        .new-order-tag.item2 {
-            background-color: #17e9c4;
-        }
+.suggestions-list figure img {
+    width: 100%;
+}
 
-        .new-order-tag.item3 {
-            background-color: #dd1724;
-        }
+.new-order {
+    position: relative;
+    grid-area: 2 / 2 / 3 / 4;
+    padding: 30px;
+    border-bottom: 2px solid grey;
+}
 
-        .new-order-tag.item4 {
-            background-color: #ef3285;
-        }
+.video {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+    color: white;
+    background: black;
+}
 
-        .icon-floppy-disk,
-        .icon-share2 {
-            font-size: 30px;
-            text-align: center;
-        }
+.new-order-count {
+    color: grey;
+    width: 100%;
+    text-align: left;
+}
 
-        .new-order-share,
-        .new-order-save {
-            margin: auto 15px;
-        }
+.new-order-button {
+    background-color: violet;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+}
 
-        @media screen and (max-width:720px){
-            .container {
-   display: block; 
-  
-         }
-        .playlist {
-          
-            grid-area: 1 / inicio / 4 / r2;
-       
-        }
-        .comments .comments-list .profile-image{
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        .comments .comments-list .profile-image img {
-            width: 30%;
-            margin: 0;
-            padding: 0;
-            padding: 5px;
-        }
-        .comments .comments-list .profile-image .comment-details {
-            width: 70%;
-            padding: 5px;
-        }
-        .new-order{
-            margin: 15px;
-            display: block;
-        }
-        .new-order .new-order-button{
-            width: 100%;
-            margin: 15px auto;
-        }
-        .new-order .new-order-category {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .new-order .new-order-category .new-order-tag{
-            width: 50%;
-            margin: 5px auto;
-            text-align: center;
-        }
-        .new-order-buttons{
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .new-order .new-order-count{
-            text-align: center;
-           
-        }
-        .new-order .new-order-buttons  a{
-            display:block;
-            width: 50%;
-            margin: 0;
-            text-align: center;
-        }
-        .comments {
-          
-           grid-area: r2 / c2 / r4 / fin;
-        }
-        .suggestions-list {
-            margin: 15px;
-            grid-area: r4 / c2 / fin / fin;
+.new-order-main,
+.new-order-title,
+.new-order-count {
+    display: block;
+}
 
-        }
-        }
+.new-order-button,
+.new-order-category,
+.new-order-share,
+.new-order-save {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 
-    </style>
+}
+
+.new-order-tag {
+    display: inline-block;
+    border-radius: 15px;
+    height: auto;
+    padding: 7px;
+    color: white;
+    width: 100px;
+    font-size: 1.2em;
+    vertical-align: middle;
+    line-height: 1em;
+    text-align: center;
+}
+
+.new-order-tag.item1 {
+    background-color: #a05ef1;
+}
+
+.new-order-tag.item2 {
+    background-color: #17e9c4;
+}
+
+.new-order-tag.item3 {
+    background-color: #dd1724;
+}
+
+.new-order-tag.item4 {
+    background-color: #ef3285;
+}
+
+.icon-floppy-disk,
+.icon-share2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.new-order-share,
+.new-order-save {
+    margin: auto 15px;
+}
+
+.comments .comments-list .profile-image {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .comments .comments-list .profile-image img {
+        width: 30%;
+        margin: 0;
+        padding: 0;
+        padding: 5px;
+    }
+
+    .comments .comments-list .profile-image .comment-details {
+        width: 70%;
+        padding: 5px;
+    }
+
+@media screen and (max-width:760px) {
+    .container {
+        display: block;
+
+    }
+
+    .playlist {
+
+        grid-area: 1 / inicio / 4 / r2;
+
+    }
+
+    .new-order {
+        margin: 15px;
+        display: block;
+    }
+
+    .new-order .new-order-button {
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    .new-order .new-order-category {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .new-order .new-order-category .new-order-tag {
+        width: 50%;
+        margin: 5px auto;
+        text-align: center;
+    }
+
+    .new-order-buttons {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .new-order .new-order-count {
+        text-align: center;
+
+    }
+
+    .new-order .new-order-buttons a {
+        display: block;
+        width: 50%;
+        margin: 0;
+        text-align: center;
+    }
+
+    .comments {
+
+        grid-area: r2 / c2 / r4 / fin;
+        border-bottom: 2px solid grey;
+
+    }
+
+    .suggestions-list {
+        margin: 15px;
+        grid-area: r4 / c2 / fin / fin;
+
+    }
+}
+</style>
 </head>
 
 <body class="container">
@@ -271,34 +313,34 @@
         <figure class="logo"><img src="image/logo-Window 400x80.png" alt=""></figure>
         <h3>Mi Playlist</h3>
         <div class="playlist-list">
-        <ol>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
-            <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
-                totam nulla eum!
-            </li>
+            <ol>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
+                <li>5 Lorem ipsum, lorum modi minus quidem dolor veritatis, sit eaque ipsa maiores explicabo cupiditate
+                    totam nulla eum!
+                </li>
 
-        </ol>
-    </div>
+            </ol>
+        </div>
         <h3>Playlist de Amigos</h3>
         <ul>
             <li class="profile-item">
@@ -344,7 +386,7 @@
         </style>
         <div class="new-order-buttons">
             <button class="new-order-button">Agregar a mi lista</button>
-  
+
             <a class="new-order-share">
                 <div class="icon-share2"></div>
                 <span>Compartir</span>
@@ -365,7 +407,12 @@
     </div>
     <section class="item comments">
         <h3>Comentarios</h3>
-        <input type="text" name="" id="" placeholder="Añade un comentario">
+        <div class="input-comment">
+            <img src="image/profile.png" alt="">
+
+            <input type="text" name="" id="" placeholder="Añade un comentario">
+
+        </div>
         <ul>
             <li class="item comments-list">
                 <figure class="item profile-image">
